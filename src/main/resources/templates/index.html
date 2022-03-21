@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Index</title>
 </head>
 <body>
-<h1>pokemon</h1>
-
+<h1>Pokemon liste</h1>
 <table>
     <thead>
     <tr>
         <th>
-            ID:
+            Id
         </th>
         <th>
-            Name:
+            Name
         </th>
         <th>
-
+            speed
         </th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>
-            Pokemon1 ID
+    <tr th:each="pokemons : ${pokemon}">
+        <td th:text="${pokemons.id}">
+            1
         </td>
-        <td>
-            pokemon name..
+        <td th:text="${pokemons.name}">
+            MitProdukt
+        </td>
+        <td th:text="${pokemons.speed}">
+            42
         </td>
     </tr>
     </tbody>
 </table>
-
 </body>
 </html>
