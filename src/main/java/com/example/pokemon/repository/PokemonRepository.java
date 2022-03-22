@@ -9,13 +9,8 @@ import java.util.ArrayList;
 
 @Repository
 public class PokemonRepository {
-  private static String user = "root";
+
   private static Connection connection;
-    //<editor-fold desc="Description">
-  private static String pw = "Kiaersej123!";
-  //</editor-fold>
-  private static String DB_URL = "jdbc:mysql://localhost:3306/pokedex";
-  public static final String jdbc_driver = "com.mysql.jdbc.driver";
 
 
   public ArrayList<Pokemon> readAll(){
@@ -54,7 +49,7 @@ return pokemonListe;
       return connection;
     } else {
       try {
-        connection = DriverManager.getConnection(DB_URL, user, pw);
+        connection = DriverManager.getConnection(Login.getDbUrl(), Login.getUser(), Login.getPw());
         System.out.println("Forbundet");
       } catch (Exception e) {
         System.out.println("Fejl" + " " + e);
