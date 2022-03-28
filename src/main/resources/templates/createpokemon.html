@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Pokemon</title>
+</head>
+<body>
+
+    <h1>Create pokemon</h1>
+
+<style>
+    form
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+</style>
+
+<form action="/createpokemon" method="post">
+
+    <label for="id">id: </label>
+    <input id="id" name="id" type="number">
+
+    <label for="name">name: </label>
+    <input id="name" name="name" type="text">
+
+    <label for="speed">speed: </label>
+    <input id="speed" name="speed" type="number">
+
+    <label for="special_defence">special defence: </label>
+    <input id="special_defence" name="special_defence" type="number">
+
+    <label for="special_attack">special attack: </label>
+    <input id="special_attack" name="special_attack" type="number">
+
+    <label for="defence">defence: </label>
+    <input id="defence" name="defence" type="number">
+
+    <label for="attack">attack: </label>
+    <input id="attack" name="attack" type="number">
+
+    <label for="hp">hp: </label>
+    <input id="hp" name="hp" type="number">
+
+    <label for="primary_type">primary type: </label>
+    <input id="primary_type" name="primary_type" type="text">
+
+    <label for="secondary_type">secondary type: </label>
+    <input id="secondary_type" name="secondary_type" type="text">
+
+    <button style="margin-top: 5px" type="submit">Opret pokemon</button>
+</form>
+
+
+</body>
+</html>

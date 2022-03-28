@@ -31,5 +31,7 @@ public class Pokemon {
     this.secondary_type = secondary_type;
   }
 
-
+  public void setSecondary_type(String secondary_type) {
+    this.secondary_type = secondary_type;
+  }
 }

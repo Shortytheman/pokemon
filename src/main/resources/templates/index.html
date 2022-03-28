@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+    table, th, td {
+        border:1px solid black;
+    }
+
+    .delete{
+        border:1px darkred;
+    }
+    .update{
+        border:1px darkgreen;
+    }
+
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
 <body>
 <h1>Pokemon liste</h1>
+<h2 >
+    <a class="nav-link" href="createpokemon">Create pokemon</a>
+</h2>
 <table>
     <thead>
     <tr>
@@ -18,18 +34,71 @@
         <th>
             speed
         </th>
+        <th>
+            special defence
+        </th>
+        <th>
+            special attack
+        </th>
+        <th>
+            defence
+        </th>
+        <th>
+            attack
+        </th>
+        <th>
+            hp
+        </th>
+        <th>
+            primary type
+        </th>
+        <th>
+            secondary type
+        </th>
+
+        <th>
+            Delete
+        </th>
+
+        <th>
+            Update
+        </th>
+        <th>
+            image
+        </th>
+
     </tr>
     </thead>
     <tbody>
     <tr th:each="pokemons : ${pokemon}">
         <td th:text="${pokemons.id}">
-            1
         </td>
         <td th:text="${pokemons.name}">
-            MitProdukt
         </td>
         <td th:text="${pokemons.speed}">
-            42
+        </td>
+        <td th:text="${pokemons.special_defence}">
+        </td>
+        <td th:text="${pokemons.special_attack}">
+        </td>
+        <td th:text="${pokemons.defence}">
+        </td>
+        <td th:text="${pokemons.attack}">
+        </td>
+        <td th:text="${pokemons.hp}">
+        </td>
+        <td th:text="${pokemons.primary_type}">
+        </td>
+        <td th:text="${pokemons.secondary_type}">
+        </td>
+        <td>
+            <a th:href="@{'/delete/' + ${pokemons.id}}"> delete </a>
+        </td>
+        <td>
+            <a th:href="@{'/update/' + ${pokemons.id}}"> update </a>
+        </td>
+        <td>
+            <img th:src="@{'https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/' + ${pokemons.id} + '.png'}" alt="ttt">
         </td>
     </tr>
     </tbody>
