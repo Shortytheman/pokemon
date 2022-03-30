@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<style>
-    table, th, td {
-        border:1px solid black;
-    }
+<link rel="stylesheet" th:href="@{style.css}" href="../static/style.css"/>
 
-    .delete{
-        border:1px darkred;
-    }
-    .update{
-        border:1px darkgreen;
-    }
-
-</style>
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
@@ -98,7 +87,7 @@
             <a th:href="@{'/update/' + ${pokemons.id}}"> update </a>
         </td>
         <td>
-            <img th:src="@{'https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/' + ${pokemons.id} + '.png'}" alt="ttt">
+            <img th:src="@{'https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/' + ${pokemons.id} + '.png'}" alt="No pokemon from this ID">
         </td>
     </tr>
     </tbody>
