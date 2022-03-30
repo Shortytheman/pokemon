@@ -158,7 +158,8 @@ return pokemonListe;
       return connection;
     } else {
       try {
-        connection = DriverManager.getConnection(Login.getDbUrl(), Login.getUser(), Login.getPw());
+        connection = DriverManager.getConnection(System.getenv("url"), System.getenv("user"),
+            System.getenv("password"));
         System.out.println("Forbundet");
       } catch (Exception e) {
         System.out.println("Fejl" + " " + e);
