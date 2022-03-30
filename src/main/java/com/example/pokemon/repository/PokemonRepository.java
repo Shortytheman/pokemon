@@ -49,7 +49,7 @@ return pokemonListe;
     try {
       //preparestatement
       PreparedStatement prepareStatement = connection.prepareStatement("INSERT INTO " +
-          "pokemon(pokedex_number,name,speed,special_defence,special_attack,defence,attack,hp,primary_type,secondary_type) values (?,?,?,?,?,?,?,?,?,?)");
+          "heroku_2ba92db6c587479.pokemon(pokedex_number,name,speed,special_defence,special_attack,defence,attack,hp,primary_type,secondary_type) values (?,?,?,?,?,?,?,?,?,?)");
       //set attributer
       prepareStatement.setInt(1, pokemon.id);
       prepareStatement.setString(2, pokemon.name);
