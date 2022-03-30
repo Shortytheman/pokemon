@@ -15,7 +15,7 @@ public class PokemonRepository {
     ArrayList<Pokemon> pokemonListe = new ArrayList<>();
     connectToSql();
     try{
-      String query = "select * from pokemon";
+      String query = "select * from heroku_2ba92db6c587479.pokemon";
       Statement statement = connection.createStatement();
       ResultSet resultSet = statement.executeQuery(query);
       while(resultSet.next()){
