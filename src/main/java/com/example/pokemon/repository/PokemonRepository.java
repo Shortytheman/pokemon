@@ -1,5 +1,6 @@
 package com.example.pokemon.repository;
 import com.example.pokemon.model.Pokemon;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -9,7 +10,11 @@ import java.util.ArrayList;
 public class PokemonRepository {
 
   private static Connection connection;
+  private static Environment environment;
 
+  public PokemonRepository(Environment environment){
+    this.environment = environment;
+  }
 
   public ArrayList<Pokemon> readAll(){
     ArrayList<Pokemon> pokemonListe = new ArrayList<>();
@@ -158,8 +163,8 @@ return pokemonListe;
       return connection;
     } else {
       try {
-        connection = DriverManager.getConnection(System.getenv("url"), System.getenv("user"),
-            System.getenv("password"));
+        connection = DriverManager.getConnection(environment.getProperty("spring.datasource.url"), environment.getProperty("spring.datasource.username"),
+            environment.getProperty("spring.datasource.password"));
         System.out.println("Forbundet");
       } catch (Exception e) {
         System.out.println("Fejl" + " " + e);
